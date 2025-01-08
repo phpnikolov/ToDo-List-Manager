@@ -144,7 +144,16 @@ function drop(e) {
   }
 }
 
-initTasks();
+function loadCurrentDateList() {
+  const todayKey = `todoList_${formatDate(new Date())}`;
+  if (localStorage.getItem(todayKey)) {
+    loadList(todayKey);
+  } else {
+    initTasks();
+  }
+}
+
+loadCurrentDateList();
 updateSavedLists();
 
 taskList.addEventListener("dragend", dragEnd);
