@@ -17,7 +17,7 @@ function createTask() {
   task.className = "task";
   task.draggable = true;
   task.innerHTML = `
-        <div class="checkbox"></div>
+        <div class="checkbox" onclick="toggleCheck(this)"></div>
         <input type="text">
     `;
   task.addEventListener("dragstart", dragStart);
@@ -26,6 +26,10 @@ function createTask() {
   task.addEventListener("dragenter", dragEnter);
   task.addEventListener("dragleave", dragLeave);
   taskList.appendChild(task);
+}
+
+function toggleCheck(checkbox) {
+  checkbox.classList.toggle("checked");
 }
 
 function initTasks() {
@@ -54,7 +58,12 @@ function updateSavedLists() {
 }
 
 function saveList() {
-  const tasks = Array.from(taskList.querySelectorAll("input")).map((input) => input.value);
+  const tasks = Array.from(taskList.querySelectorAll(".task")).map((task) => {
+    return {
+      text: task.querySelector("input").value,
+      checked: task.querySelector(".checkbox").classList.contains("checked")
+    };
+  });
   const saveData = { tasks: tasks, date: currentListDate };
   const saveDate = formatDate(currentListDate);
   localStorage.setItem(`todoList_${saveDate}`, JSON.stringify(saveData));
@@ -67,7 +76,11 @@ function loadList(key) {
     taskList.innerHTML = "";
     savedData.tasks.forEach((task, index) => {
       createTask();
-      taskList.lastChild.querySelector("input").value = task;
+      const taskElement = taskList.lastChild;
+      taskElement.querySelector("input").value = task.text;
+      if (task.checked) {
+        taskElement.querySelector(".checkbox").classList.add("checked");
+      }
     });
     setCurrentDate(new Date(savedData.date));
   }

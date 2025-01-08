@@ -39,6 +39,10 @@ h1 {
   height: 42px;
   border: 3px solid #aaa;
   margin-right: 20px;
+  cursor: pointer;
+}
+.checkbox.checked {
+  background-color: #000;
 }
 #controls {
   margin-top: 20px;
