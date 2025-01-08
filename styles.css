@@ -14,11 +14,10 @@ body {
 }
 h1 {
   text-align: center;
-  font-size: 100px;
-  letter-spacing: -5px;
+  font-size: 70px;
   font-weight: 300;
-  line-height: 50px;
-  margin: 0 0 40px;
+  line-height: 70px;
+  margin: 0;
 }
 .task {
   display: flex;
@@ -34,15 +33,16 @@ h1 {
 }
 .checkbox {
   display: inline-block;
-  width: 42px;
-  min-width: 42px;
-  height: 42px;
-  border: 3px solid #aaa;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  outline: 2px solid #aaa;
+  border: 5px solid #fff;
   margin-right: 20px;
   cursor: pointer;
 }
 .checkbox.checked {
-  background-color: #000;
+  background-color: #aaa;
 }
 #controls {
   margin-top: 20px;
