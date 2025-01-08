@@ -1,4 +1,3 @@
-const colors = ["color1", "color2", "color3"];
 const taskList = document.getElementById("taskList");
 const listOfLists = document.getElementById("listOfLists");
 
@@ -10,7 +9,7 @@ function formatDate(date) {
 
 function setCurrentDate(date) {
   currentListDate = date;
-  document.getElementById("currentDate").textContent = `To Do List for ${formatDate(date)}`;
+  document.getElementById("currentDate").textContent = formatDate(date);
 }
 
 function createTask() {
@@ -27,15 +26,6 @@ function createTask() {
   task.addEventListener("dragenter", dragEnter);
   task.addEventListener("dragleave", dragLeave);
   taskList.appendChild(task);
-  updateColors();
-}
-
-function updateColors() {
-  const tasks = taskList.querySelectorAll(".task");
-  tasks.forEach((task, index) => {
-    const checkbox = task.querySelector(".checkbox");
-    checkbox.className = `checkbox ${colors[index % 3]}`;
-  });
 }
 
 function initTasks() {
@@ -79,7 +69,6 @@ function loadList(key) {
       createTask();
       taskList.lastChild.querySelector("input").value = task;
     });
-    updateColors();
     setCurrentDate(new Date(savedData.date));
   }
 }
@@ -112,7 +101,6 @@ function dragStart(e) {
 function dragEnd(e) {
   this.classList.remove("dragging");
   draggedItem = null;
-  updateColors();
 }
 
 function dragOver(e) {
@@ -146,5 +134,4 @@ function drop(e) {
 initTasks();
 updateSavedLists();
 
-// Add drag end event listener to all tasks
 taskList.addEventListener("dragend", dragEnd);
