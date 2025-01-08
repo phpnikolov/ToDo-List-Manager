@@ -1,0 +1,89 @@
+body {
+    background-color: #fff;
+    color: #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+.container {
+    width: 1100px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 3px dotted #aaa;
+    font-size: 40px;
+    line-height: 40px;
+}
+h1 {
+    text-align: center;
+    font-size: 100px;
+    letter-spacing: -5px;
+    font-weight: 300;
+    line-height: 50px;
+    margin: 0 0 40px;
+}
+.task {
+    display: flex;
+    margin-bottom: 40px;
+    cursor: move;
+}
+.task input {
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    width: 100%;
+    font-size: 40px;
+}
+.checkbox {
+    display: inline-block;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    border: 5px solid #aaa;
+    margin-right: 20px;
+}
+.checkbox.color1 { border-color: #ef73ab; }
+.checkbox.color2 { border-color: #6dc8bf; }
+.checkbox.color3 { border-color: #e4c924; }
+#controls {
+    margin-top: 20px;
+    text-align: center;
+}
+#controls button {
+    font-size: 20px;
+    margin: 5px;
+    padding: 5px 10px;
+}
+#savedLists {
+    margin-top: 20px;
+    font-size: 20px;
+}
+#listOfLists li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.listDate {
+    color: blue;
+    text-decoration: underline;
+}
+.deleteBtn {
+    margin-left: 10px;
+    cursor: pointer;
+    color: red;
+    font-size: 16px;
+}
+.drag-over {
+    border: 2px dashed #000;
+}
+@media print {
+    .container {
+        padding: 0;
+        border: none;
+    }
+    #controls, #savedLists {
+        display: none !important;
+    }
+}
+#currentDate {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}

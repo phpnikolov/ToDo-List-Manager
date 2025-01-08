@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <span style="color: #ef73ab">TO</span>
+            <span style="color: #6dc8bf">DO</span>
+            <span style="color: #e4c924">LIST</span>
+        </h1>
+        <div id="currentDate"></div>
+        <div id="taskList"></div>
+        <div id="controls">
+            <button onclick="saveList()">Save</button>
+            <button onclick="newList()">New</button>
+            <button onclick="printList()">Print</button> 
+        </div>
+        <div id="savedLists">
+            <h3>Last 10 Saved Lists:</h3>
+            <ul id="listOfLists"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
