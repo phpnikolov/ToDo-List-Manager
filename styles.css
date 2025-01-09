@@ -8,8 +8,6 @@ body {
   width: 1100px;
   margin: 0 auto;
   padding: 15px;
-  border-left: 3px dashed #aaa;
-  border-right: 3px dashed #aaa;
   font-size: 30px;
   line-height: 30px;
 }
@@ -18,7 +16,7 @@ h1 {
   font-size: 70px;
   font-weight: 300;
   line-height: 70px;
-  margin: 0;
+  margin: 0 0 5px;
 }
 .task {
   display: flex;
@@ -44,7 +42,10 @@ h1 {
   cursor: pointer;
 }
 .checkbox.checked {
-  background-color: #aaa;
+  background-color: #aaa !important;
+}
+.checkbox:hover {
+  background-color: #ccc;
 }
 #controls {
   margin-top: 20px;
@@ -79,7 +80,6 @@ h1 {
 @media print {
   .container {
     padding: 0;
-    border: none;
   }
   #controls,
   #savedLists {
