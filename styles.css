@@ -20,7 +20,7 @@ h1 {
 }
 .task {
   display: flex;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
   cursor: move;
 }
 .task input {
@@ -28,17 +28,17 @@ h1 {
   border-bottom: 1px solid #ccc;
   outline: none;
   width: 100%;
-  font-size: 32px;
+  font-size: 26px;
 }
 .checkbox {
   display: inline-block;
-  width: 32px;
-  min-width: 32px;
-  height: 32px;
-  margin-left: 3px;
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
   outline: 3px solid #aaa;
   border: 5px solid #fff;
-  margin-right: 16px;
+  margin-left: 2px;
+  margin-right: 12px;
   cursor: pointer;
 }
 .checkbox.checked {
