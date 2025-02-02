@@ -34,7 +34,7 @@ function toggleCheck(checkbox) {
 
 function initTasks() {
   taskList.innerHTML = "";
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < 20; i++) { // Increased number of tasks to fit more rows
     createTask();
   }
   setCurrentDate(new Date());
